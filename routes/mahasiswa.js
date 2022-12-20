@@ -7,8 +7,15 @@ const Mahasiswa = require('../models/Mahasiswa')
 router.post('/', async (req, res) => {
     // tampung input mahasiswa 
     const mahasiswaPost = new Mahasiswa({
+        fotohero: req.body.fotohero,
         nama: req.body.nama,
-        alamat: req.body.alamat
+        grade : req.body.grade,
+        point : req.body.point,
+        chakra : req.body.chakra,
+        skill : req.body.skill,
+        summon : req.body.summon,
+        tailed : req.body.tailed,
+        quality : req.body.quality
     })
 
     try {
@@ -23,11 +30,56 @@ router.post('/', async (req, res) => {
     }
 })
 
-// Get
 // Read
 router.get('/', async (req, res) => {
     try {
         const mahasiswa = await Mahasiswa.find()
+        res.json(mahasiswa)
+    } catch (error) {
+        res.json({
+            message: error
+        })
+    }
+})
+
+
+// Update 
+router.put('/:mahasiswaId', async (req, res) => {
+    // tampung input mahasiswa 
+    const data = {
+        fotohero: req.body.fotohero,
+        nama: req.body.nama,
+        grade : req.body.grade,
+        point : req.body.point,
+        chakra : req.body.chakra,
+        skill : req.body.skill,
+        summon : req.body.summon,
+        tailed : req.body.tailed,
+        quality : req.body.quality
+    }
+
+    try {
+        // update data 
+        const mahasiswa = await Mahasiswa.updateOne({
+            _id: req.params.mahasiswaId
+        }, data)
+        // response
+        res.json(mahasiswa)
+    } catch (error) {
+        res.json({
+            message: error
+        })
+    }
+})
+
+// Delete 
+router.delete('/:mahasiswaId', async (req, res) => {
+    try {
+        // delete data 
+        const mahasiswa = await Mahasiswa.deleteOne({
+            _id: req.params.mahasiswaId
+        })
+        // response
         res.json(mahasiswa)
     } catch (error) {
         res.json({

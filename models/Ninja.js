@@ -1,7 +1,7 @@
-// (4) Buat Schema Mahasiswa
+// (4) Buat Schema Ninja
 const mongoose = require('mongoose')
 
-const MahasiswaSchema = mongoose.Schema({
+const NinjaSchema = mongoose.Schema({
     // Buat Schema data
     fotohero: {
         type: String,
@@ -79,4 +79,4 @@ const MahasiswaSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Mahasiswa', MahasiswaSchema)
+module.exports = mongoose.model('Ninja', NinjaSchema)
