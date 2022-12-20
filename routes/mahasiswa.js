@@ -47,6 +47,7 @@ router.get('/', async (req, res) => {
 router.put('/:mahasiswaId', async (req, res) => {
     // tampung input mahasiswa 
     const data = {
+<<<<<<< HEAD
         fotohero: req.body.fotohero,
         nama: req.body.nama,
         grade : req.body.grade,
@@ -56,6 +57,10 @@ router.put('/:mahasiswaId', async (req, res) => {
         summon : req.body.summon,
         tailed : req.body.tailed,
         quality : req.body.quality
+=======
+        nama: req.body.nama,
+        alamat: req.body.alamat
+>>>>>>> db463c9a48f6d90cf1f4c68bd3e04bd29d628372
     }
 
     try {
