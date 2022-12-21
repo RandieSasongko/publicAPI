@@ -7,6 +7,14 @@ const NinjaSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    fotodetail: {
+        type: String,
+        required: true
+    },
+    background: {
+        type: String,
+        required: true
+    },
     nama: {
         type: String,
         required: true
