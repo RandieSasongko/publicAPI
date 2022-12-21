@@ -8,6 +8,8 @@ router.post('/', async (req, res) => {
     // tampung input ninja
     const ninjaPost = new Ninja({
         fotohero: req.body.fotohero,
+        fotodetail: req.body.fotodetail,
+        background: req.body.background,
         nama: req.body.nama,
         grade: req.body.grade,
         point: req.body.point,
@@ -48,6 +50,8 @@ router.put('/:ninjaId', async (req, res) => {
     // tampung input ninja
     const data = {
         fotohero: req.body.fotohero,
+        fotodetail: req.body.fotodetail,
+        background: req.body.background,
         nama: req.body.nama,
         grade: req.body.grade,
         point: req.body.point,
