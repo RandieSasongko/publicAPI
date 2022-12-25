@@ -7,12 +7,17 @@ const Skill = require('../models/Skill')
 router.post('/', async (req, res) => {
     // tampung input skill
     const skillPost = new Skill({
+        preview: req.body.preview,
         fotoskill: req.body.fotoskill,
         nama: req.body.nama,
         grade: req.body.grade,
         chakra: req.body.chakra,
         procRate: req.body.procRate,
-        damage: req.body.damage
+        damage: req.body.damage,
+        effect: req.body.effect,
+        launch: req.body.launch,
+        restriction: req.body.restriction,
+        round: req.body.round
     })
 
     try {
@@ -44,12 +49,17 @@ router.get('/', async (req, res) => {
 router.put('/:skillId', async (req, res) => {
     // tampung input skill
     const data = {
+        preview: req.body.preview,
         fotoskill: req.body.fotoskill,
         nama: req.body.nama,
         grade: req.body.grade,
         chakra: req.body.chakra,
         procRate: req.body.procRate,
-        damage: req.body.damage
+        damage: req.body.damage,
+        effect: req.body.effect,
+        launch: req.body.launch,
+        restriction: req.body.restriction,
+        round: req.body.round
     }
 
     try {
