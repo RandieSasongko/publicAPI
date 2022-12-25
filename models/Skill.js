@@ -7,6 +7,10 @@ const SkillSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    preview: {
+        type: String,
+        required: true
+    },
     nama: {
         type: String,
         required: true
@@ -24,6 +28,26 @@ const SkillSchema = mongoose.Schema({
         required: true
     },
     procRate: {
+        type: String,
+        required: true
+    },
+    grade: {
+        type: String,
+        required: true
+    },
+    effect: {
+        type: String,
+        required: true
+    },
+    launch: {
+        type: String,
+        required: true
+    },
+    restriction: {
+        type: String,
+        required: true
+    },
+    round: {
         type: String,
         required: true
     },
