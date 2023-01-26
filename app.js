@@ -20,7 +20,7 @@ app.use((req, res, next) =>{
 })
 
 // (7) import routes
-const ninjaRoutes = require('./routes/ninja/:id')
+const ninjaRoutes = require('./routes/ninja/:_id')
 const skillRoutes = require('./routes/skill')
 const tailedRoutes = require('./routes/tailed')
 
