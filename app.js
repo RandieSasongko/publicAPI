@@ -15,11 +15,12 @@ app.use(bodyParser.json());
 app.use((req, res, next) =>{
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'Content-Type, Authorization');
     next();
 })
 
 // (7) import routes
-const ninjaRoutes = require('./routes/ninja')
+const ninjaRoutes = require('./routes/ninja/:id')
 const skillRoutes = require('./routes/skill')
 const tailedRoutes = require('./routes/tailed')
 
