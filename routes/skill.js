@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
 })
 
 // Read Id
-router.get('/', async (req, res) => {
+router.get('/:skillId', async (req, res) => {
     try {
         const skill = await Skill.find({
             _id: req.params.skillId
