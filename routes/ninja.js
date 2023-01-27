@@ -33,21 +33,21 @@ router.post('/', async (req, res) => {
 })
 
 // Read
-// router.get('/', async (req, res) => {
-//     try {
-//         const ninja = await Ninja.find()
-//         res.json(ninja)
-//     } catch (error) {
-//         res.json({
-//             message: error
-//         })
-//     }
-// })
+router.get('/', async (req, res) => {
+    try {
+        const ninja = await Ninja.find()
+        res.json(ninja)
+    } catch (error) {
+        res.json({
+            message: error
+        })
+    }
+})
 
 // Read Id
 router.get('/:ninjaId', async (req, res) => {
     try {
-        const ninja = await Ninja.find()
+        const ninja = await Ninja.find(ninjaId)
         res.json(ninja)
     } catch (error) {
         res.json({
