@@ -47,7 +47,9 @@ router.get('/', async (req, res) => {
 // Read Id
 router.get('/:ninjaId', async (req, res) => {
     try {
-        const ninja = await Ninja.find(ninjaId)
+        const ninja = await Ninja.find({
+            _id: req.params.ninjaId
+        })
         res.json(ninja)
     } catch (error) {
         res.json({
