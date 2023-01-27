@@ -44,6 +44,19 @@ router.get('/', async (req, res) => {
     }
 })
 
+// Read Id
+router.get('/', async (req, res) => {
+    try {
+        const skill = await Skill.find({
+            _id: req.params.skillId
+        })
+        res.json(skill)
+    } catch (error) {
+        res.json({
+            message: error
+        })
+    }
+})
 
 // Update 
 router.put('/:skillId', async (req, res) => {
