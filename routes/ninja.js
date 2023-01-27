@@ -46,6 +46,19 @@ router.get('/', async (req, res) => {
 
 // Read Id
 router.get('/:ninjaId', async (req, res) => {
+    const data = {
+        fotohero: req.body.fotohero,
+        fotodetail: req.body.fotodetail,
+        background: req.body.background,
+        nama: req.body.nama,
+        grade: req.body.grade,
+        point: req.body.point,
+        chakra: req.body.chakra,
+        skill: req.body.skill,
+        summon: req.body.summon,
+        tailed: req.body.tailed,
+        quality: req.body.quality
+    }
     try {
         const ninja = await Ninja.find()
         res.json(ninja)
