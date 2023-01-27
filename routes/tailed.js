@@ -36,6 +36,21 @@ router.get('/', async (req, res) => {
     }
 })
 
+// Read Id
+router.get('/', async (req, res) => {
+    try {
+        const tailed = await Tailed.find({
+            _id: req.params.ninjaId
+        })
+        res.json(tailed)
+    } catch (error) {
+        res.json({
+            message: error
+        })
+    }
+})
+
+
 
 // Update 
 router.put('/:tailedId', async (req, res) => {
