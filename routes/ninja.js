@@ -44,6 +44,18 @@ router.get('/', async (req, res) => {
     }
 })
 
+// Read Id
+router.get('/:ninjaId', async (req, res) => {
+    try {
+        const ninja = await Ninja.find()
+        res.json(ninja)
+    } catch (error) {
+        res.json({
+            message: error
+        })
+    }
+})
+
 
 // Update 
 router.put('/:ninjaId', async (req, res) => {
