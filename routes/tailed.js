@@ -37,10 +37,10 @@ router.get('/', async (req, res) => {
 })
 
 // Read Id
-router.get('/', async (req, res) => {
+router.get('/:tailedId', async (req, res) => {
     try {
         const tailed = await Tailed.find({
-            _id: req.params.ninjaId
+            _id: req.params.tailedId
         })
         res.json(tailed)
     } catch (error) {
